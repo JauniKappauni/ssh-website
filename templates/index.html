@@ -1,19 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SSH Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <form method="post">
-        <input type="text" name="host" placeholder="Host" required><br>
-        <input type="number" name="port" placeholder="Port" value="22" required><br>
-        <input type="text" name="username" placeholder="Username" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <input type="text" name="command" placeholder="command" required><br>
-        <input type="submit">
-    </form>
-    <pre>{{output}}</pre>
+<body class="d-flex align-items-center justify-content-center vh-100 bg-dark text-light">
+    <div class="container">
+        <div class="card bg-secondary p-3">
+            <h2 class="text-center">SSH</h2>
+            <form method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Host</label>
+                        <input type="text" name="host" placeholder="Host" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Port</label>
+                        <input type="number" name="port" placeholder="Port" value="22" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" name="username" placeholder="Username" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password" placeholder="Password" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Command</label>
+                        <input type="text" name="command" placeholder="command" class="form-control" required>
+                    </div>
+                    <input type="submit" class="btn btn-primary w-100">
+            </form>
+            <div class="mt-4">
+                <pre class="bg-dark text-light p-3 border rounded">{{output}}</pre>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
